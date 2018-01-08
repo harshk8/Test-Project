@@ -1,0 +1,52 @@
+{% extends 'clientportal/base.html' %}
+
+{% load static %}
+
+{% block title %} signup {% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<div class='row'>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+       <center> <h3 class="panel-title">Dashboard</h3> </center>
+      </div>
+      <div class="panel-body">
+
+      <center> <h1> Welcome to Dashboard </h1> </center>
+    </div>
+
+  
+{% endblock %}
+
+
+
+
+  
+
+
+{% block javascript %}
+  
+<!-- <script type="text/javascript" src="{% static 'clientportal/js/signup.js' %}"></script>
+ -->
+
+
+
+
+{% endblock %}

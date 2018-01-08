@@ -1,0 +1,42 @@
+{% extends 'clientportal/base.html' %}
+
+{% load static %}
+
+{% block title %} Confirmation {% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+<div class='row'>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Account Confirmation </h3>
+      </div>
+      <div class="panel-body">
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+  <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+  	<br> Didn't get the email? <a href={% url 'user:re_confirm' %}> <b> Resend </b> </a> <p>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'clientportal/base.html' %}
+
+{% load static %}
+
+{% block title %} signup {% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+
+
+
+<div class='row'>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+       <center> <h3 class="panel-title">Client Detail Form</h3> </center>
+      </div>
+      <div class="panel-body">
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+  <center> <h1> <strong> <pre class="text-success"><li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li></pre> </strong>  </h1> </center>
+ 
+
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<!--       <center> <h1> Please Fill Client Details </h1> </center>
+ --> 
+      <form  method='POST'>
+          {% csrf_token %}
+
+       {{form.as_p}}
+
+     <input type='submit' class='btn btn-success'>
+
+     </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<form action={% url 'user:login'  %}  method='POST'  class='form-control'>
+
+{% csrf_token %}
+<div class="form-group">
+  <label for="email">Email address:</label>
+	<input type='email' name='email' id='email' placeholder="Enter Email" />
+</div>
+
+<div class="form-group">
+  <label for="pwd">Password:</label>
+	<input type='password' name='password' id='password' placeholder="Password" />	
+</div>
+
+<div class="form-group">
+	<button type="submit" class="btn btn-success"  >Submit</button>
+
+<a href=#> Forget Password ? </a>
+</div>
+
+</form>
+
+ -->
+
+
+  
+{% endblock %}
+
+
+
+
+  
+
+
+{% block javascript %}
+  
+<script type="text/javascript" src="{% static 'clientportal/js/signup.js' %}"></script>
+
+
+
+
+
+{% endblock %}
